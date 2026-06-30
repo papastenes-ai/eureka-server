@@ -11,8 +11,8 @@ FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
-COPY --from=build /app/target/eureka-server-0.0.1-SNAPSHOT.jar app_eureka_server.jar
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8761
 
-ENTRYPOINT ["java", "-jar", "app_eureka_server.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
